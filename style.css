@@ -5,6 +5,10 @@
   ghost white: #F8F8FF
 */
 
+strong {
+  color: #E78F81;
+  text-shadow: #12121280 1em 0.1em;
+}
 
 * {
   box-sizing: border-box;
@@ -13,12 +17,13 @@
 
 body {
   font-family: Montserrat;
-  background-color: #F8F8FF;
+  background-color: #B7E0FF;
   color: #121212;
   font-size: 1.2rem;
 }
 
 a {
+  font-weight: bold;
   text-decoration: none;
   font-family: inherit;
   color: inherit;
@@ -30,6 +35,7 @@ a {
   height: 85vh;
 }
 nav {
+  background-color: #FFF5CD;
   width: 100%;
   height: 80px;
   padding-left: 30px;
@@ -92,10 +98,16 @@ nav {
 
 .char, .his, .value, .action {
   height: fit-content;
-  width: 76%;
-  padding: 80px 0px;
+  width: 100%;
+  padding: 80px 12%;
   padding-top: 40px;
-  margin: 0px 12%;
+}
+
+.char,
+.value,
+.comp,
+.list-img {
+  background-color: #FFF5CD;
 }
 
 .char h2, .his h3 {
@@ -111,15 +123,28 @@ nav {
   gap: 10px;
 }
 
+.char .content-box .content:nth-child(odd){
+  background-color: #E78F81;
+  border-color: #8f4b40;
+}
+.char .content-box .content:nth-child(even) {
+  background-color: #FFCFB3;
+  border-color: #a87c62;
+}
+
 .char .content {
   width: 300px;
-  border: #121212 solid 3px;
+  border: solid 3px;
   border-radius: 20px;
   padding: 10px;
 }
 
 .char h3 {
   margin-bottom: 20px;
+}
+
+.char h2 {
+  text-align: center;
 }
 
 .his .content-box {
@@ -175,6 +200,14 @@ nav {
 .value .content-box li {
   max-width: 300px;
   width: 28%;
+  padding-left: 12px;
+  border-left: 6px #E78F81 solid;
+  border-radius: 3px;
+}
+
+.value .content-box.no1 li:nth-child(odd),
+.value .content-box.no2 li:nth-child(even)  {
+  border-color: aquamarine;
 }
 
 @media screen and (max-width: 740px){
@@ -192,11 +225,15 @@ nav {
   display: flex;
   flex-wrap: wrap;
   margin-bottom:40px;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .action .content-box.no2 {
   display: flex;
   flex-wrap: wrap-reverse;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .action .content-box ul {
@@ -226,10 +263,43 @@ nav {
 .list-img {
   width: 100%;
   padding: 10px;
-  columns: 200px;
+  columns: 300px;
 }
 
 .list-img img {
   width: 100%;
   margin-bottom: 1em;
+}
+
+.comp{
+  padding: 30px;
+}
+
+.mem {
+  width: 100%;
+  height: fit-content;
+  position: absolute;
+  top:50%;
+  left:50%;
+  max-width: 700px;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10%;
+}
+.mem h1 {
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+}
+.mem .hero {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  column-gap: 30px;
+  row-gap: 10px;
 }
